@@ -45,21 +45,28 @@ class Graph
 			return newNode;
 		}
 
+		//Adds an undirected edge to the graph
 		void addEdge (int src, int dest)
 		{
-			AdjListNode* newNode = newAdjListNode(dest);
+			//Adds an edge from src to dest. A new node is being created and 
+			//node is being added at the beginning.
+
+			AdjListNode* newNode = newAdjListNode(dest); //creation of new node, no need of malloc as in C.
 			newNode->next = array[src].head;
 			array[src].head = newNode;
+
+			//Since the graph is undirected, we add another edge from dest to src.
 			newNode = newAdjListNode(src);
 			newNode->next = array[dest].head;
 			array[dest].head = newNode;
 		}
 
+		//The arrays of the list are being printed.
 		void printGraph ()
 		{
 			int v;
 			for(v=0;v<V;v++){
-				AdjListNode* pCrawl = array[v].head;
+				AdjListNode* pCrawl = array[v].head; // The head node of each array
 				cout << "\n Adjacency list of vertex " <<v<< "\n head";
 				while(pCrawl){
 					cout << "->" << pCrawl->dest;
@@ -73,7 +80,7 @@ class Graph
 int main()
 {
 	Graph gh(5);
-	gh.addEdge(0, 1);
+	gh.addEdge(0, 1); // Various vertices and the edges.
     gh.addEdge(0, 4);
     gh.addEdge(1, 2);
     gh.addEdge(1, 3);
