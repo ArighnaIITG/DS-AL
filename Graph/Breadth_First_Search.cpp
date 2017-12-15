@@ -57,10 +57,12 @@ void BFS(int s)             // s --> source vertex
 	//Main Logic
 	while(!queue.empty())
 	{
+		//Dequeue the queue. Print the first element of the queue, and then pop it.
 		s = queue.front();
 		cout << s << ",";
 		queue.pop_front();
 
+		//Run through the adjacency list of that vertex. 
 		for(it=adj[s].begin(); it!=adj[s].end(); ++it)
 		{
 			if(!visited[*it]){
