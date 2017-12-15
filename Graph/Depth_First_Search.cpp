@@ -1,7 +1,7 @@
 // This program performs the depth-first traversal of a graph.
 // The recursive approach has been given here.
 
-#include <iostream>
+#include <iostream>   
 #include <list>
 #include <iterator>
 
@@ -43,6 +43,7 @@ void Graph::DFSutil(int v ,bool visited[])
 	// Create an iterator it.
 	list<int> :: iterator it;
 
+	//Recur for all the vertices adjacent to tjhis vertex.
 	for(it=adj[v].begin() ;it!=adj[v].end(); i++){
 		if(!visited(*it))
 			DFSutil(*it ,visited); // recursively calls the function here. Recursive implementation of stack.
