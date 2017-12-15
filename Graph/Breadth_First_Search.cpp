@@ -29,13 +29,13 @@ Graph::Graph(int V)
 							// From the STL Library.
 }
 
-void addEdge(int v, int w)
+void Graph::addEdge(int v, int w)
 {
 	adj[v].push_back(w);    // Adds an edge from v to w.
 							// push_back(w) adds an element(w) to the end of the list.
 }
 
-void BFS(int s)             // s --> source vertex
+void Graph::BFS(int s)             // s --> source vertex
 {
 	// Create a boolean visited array. Mark all vertices initially as not visited.
 	bool *visited = new bool[V];
