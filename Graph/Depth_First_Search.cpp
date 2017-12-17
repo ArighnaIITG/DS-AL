@@ -44,8 +44,8 @@ void Graph::DFSutil(int v ,bool visited[])
 	list<int> :: iterator it;
 
 	//Recur for all the vertices adjacent to tjhis vertex.
-	for(it=adj[v].begin() ;it!=adj[v].end(); i++){
-		if(!visited(*it))
+	for(it=adj[v].begin() ;it!=adj[v].end(); it++){
+		if(!visited[*it])
 			DFSutil(*it ,visited); // recursively calls the function here. Recursive implementation of stack.
 	}
 }
@@ -55,7 +55,7 @@ void Graph::DFS(int s)
 	//Create a boolean visited array
 	bool *visited = new bool[V];
 	for(int i=0; i<V; i++){
-		visited = false;
+		visited[i] = false;
 	}
 
 	DFSutil(s,visited); // calls once the DFSutil function using the source vertex,
