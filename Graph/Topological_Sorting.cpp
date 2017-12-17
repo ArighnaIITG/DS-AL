@@ -47,11 +47,12 @@ void Graph::topologicalSortUtil(int v, bool visited[], stack<int> &Stack)
 	// Create an iterator it.
 	list<int> :: iterator it;
 
+	//Recur for all the vertices adjacent to this vertex
 	for(it=adj[v].begin(); it!=adj[v].end(); it++){
 		if(!visited[*it])
 			topologicalSortUtil(*it, visited, Stack);
 	}
-	Stack.push(v);
+	Stack.push(v);  // Push the contents onto the stack
 }
 
 void Graph::topologicalSort()
@@ -96,3 +97,6 @@ int main()
     return 0;
 }
 
+/* Time Complexity :
+	O(V+E)  , where V is no. of vertices and E is no. of edges
+	*/
