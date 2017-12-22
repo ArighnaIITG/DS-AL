@@ -152,7 +152,7 @@ void LinkedList::insert_begin()
 	cout << "Enter the value to be inserted : " << endl
 	cin >> value;
 
-	struct Node *temp. *p;
+	Node *temp, *p;
 	temp = create_Node(value);
 
 	if(head == NULL){
@@ -165,5 +165,36 @@ void LinkedList::insert_begin()
 		head = temp;
 		head->next = p;
 	}
+	cout << "Element inserted at beginning" < endl;
 }
 
+void LinkedList::insert_end()
+{
+	int value;
+	cout << "Enter the value to be inserted : " << endl
+	cin >> value;
+
+	Node *temp, *s;
+	temp = create_Node(value);
+	s = head;
+
+	while(s-> next != NULL)
+		s = s->next;
+
+	temp->next = NULL;
+	s->next = temp;
+	cout << "Element inserted at end" << endl
+}
+
+void LinkedList::insert_pos()
+{
+	int value;
+	int pos, counter=0;
+	cout << "Enter the value to be inserted : " << endl
+	cin >> value;
+
+	Node *temp, *s, *ptr;
+	temp = create_Node(value);
+	
+	
+}
