@@ -195,6 +195,9 @@ void LinkedList::insert_pos()
 
 	Node *temp, *s, *ptr;
 	temp = create_Node(value);
-	
-	
+	s = head;
+
+	cout << "Enter the position at which node is to be inserted" << endl;
+	cin >> pos;
+
 }
