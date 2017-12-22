@@ -16,12 +16,12 @@ struct Node
 	struct Node *next;   // Pointer to the next node
 };
 
-struct Node* head;       // Head Node of the Linked List
+struct Node *head;       // Head Node of the Linked List
 
 class LinkedList()
 {
 	public :
-		Node* create Node(int value);       // Creating a node with a given value
+		Node* create_Node(int value);       // Creating a node with a given value
 		void insert_begin();				// Inserting a node at the beginning of the linked list
         void insert_pos();					// Inserting a node at a specific position in the linked list
         void insert_last(); 				// Inserting a node at the end of the linked list
@@ -130,5 +130,40 @@ main()
             cout<<"Wrong choice"<<endl;
         }
     }
+}
+
+Node* LinkedList::create_Node(int value)
+{
+	Node *temp, *s;
+	Node *temp = new Node;
+	if(temp == NULL)
+		cout << "Memory not allocated" << endl;
+
+	else{
+		temp->data = value;
+		temp->next = NULL;
+		return temp;
+	}
+}
+
+void LinkedList::insert_begin()
+{
+	int value;
+	cout << "Enter the value to be inserted : " << endl
+	cin >> value;
+
+	struct Node *temp. *p;
+	temp = create_Node(value);
+
+	if(head == NULL){
+		head = temp;
+		head->next = NULL;
+	}
+
+	else{
+		p = head;
+		head = temp;
+		head->next = p;
+	}
 }
 
