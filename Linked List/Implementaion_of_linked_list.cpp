@@ -199,5 +199,15 @@ void LinkedList::insert_pos()
 
 	cout << "Enter the position at which node is to be inserted" << endl;
 	cin >> pos;
+	int i;
+
+	while(s->next != NULL){
+		s = s->next;
+		counter++;
+	}
+
+	if(pos == 1){
+		if(start == NULL)
+	}
 
 }
