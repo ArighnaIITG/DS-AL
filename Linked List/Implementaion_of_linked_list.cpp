@@ -347,3 +347,36 @@ void LinkedList::update()
 	}
 	cout << "Element updated." << endl
 }
+
+void LinkedList::search()
+{
+	Node *s;
+	int value, pos=0;
+	bool flag = false;
+
+	cout << "Enter the value to be searched : ";
+	cin >> value;
+
+	if(head == NULL)
+	{
+		cout << "List is empty";
+		return;
+	}
+
+	s = head;
+	while(s!= NULL)
+	{
+		pos++;
+		if(s->data == value)
+		{
+			cout << "Element found at " << pos << endl;
+			return;
+		}
+		s = s->next;
+	}
+	if(!flag)
+	{
+		cout << "Element not present in the list." << endl;
+		return;
+	}
+}
