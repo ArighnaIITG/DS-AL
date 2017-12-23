@@ -310,3 +310,40 @@ void LinkedList::delete_pos()
 		cout << "Element deleted" << endl;
 	}
 }
+
+void LinkedList::update()
+{
+	Node *s;
+	int pos, value, i;
+
+	cout << "Enter the position : ";
+	cin >> pos;
+	cout << "Enter the new value";
+	cin >> value;
+
+	if(head == NULL)
+	{
+		cout << "List is empty";
+		return;
+	}
+
+	s = head;
+	if(pos == 1)
+	{
+		head->data = value;
+	}
+	else
+	{
+		for(i=1; i<pos; i++)
+		{
+			if(s == NULL)
+			{
+				cout << "There are less than " << pos << "elements." << endl;
+				return;
+			}
+			s = s->next;
+		}
+		s->data = value;
+	}
+	cout << "Element updated." << endl
+}
