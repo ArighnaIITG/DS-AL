@@ -410,3 +410,23 @@ void LinkedList::reverse()
 	head = ptr2;
 	cout << "List is reversed." << endl;
 }
+
+void LinkedList::display()
+{
+	Node *temp;
+	if(head == NULL)
+	{
+		cout << "List is empty." << endl
+		return;
+	}
+
+	temp = head;
+	cout << "Elements of list are: " << endl;
+
+	while(temp!= NULL)
+	{
+		cout << temp->data << "->";
+		temp = temp->next;
+	}
+	cout << "NULL" << endl;
+}
