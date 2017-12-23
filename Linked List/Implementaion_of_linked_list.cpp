@@ -206,8 +206,33 @@ void LinkedList::insert_pos()
 		counter++;
 	}
 
-	if(pos == 1){
-		if(start == NULL)
+	if(pos == 1)
+	{
+		if(head == NULL){
+			head = temp;
+			head->next = NULL;
+		}
+		else{
+			ptr = temp;
+			temp = head;
+			head->next = ptr;
+		}
 	}
 
+	else if (pos>1 and pos<=counter)
+	{
+		s = head;
+		for(i=1; i<pos; i++)
+		{
+			ptr = s;
+			s = s->next
+		}
+		ptr->next = temp;
+		temp->next = s;
+	}
+
+	else
+	{
+		cout<<"Positon out of range"<<endl;
+	}
 }
