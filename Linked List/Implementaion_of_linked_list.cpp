@@ -263,3 +263,50 @@ void LinkedList::sort()
 		ptr = ptr->next;
 	}
 }
+
+void LinkedList::delete_pos()
+{
+	Node *ptr, *s;
+	int pos, i, counter=0;
+
+	if(head == NULL)
+	{
+		cout << "List is Empty" << endl;
+		return;
+	}
+
+	cout << "Enter the position at which the node is to be deleted : ";
+	cin >> pos;
+
+	s = head;
+	if(pos == 1)
+	{
+		head = s->next;
+	}
+
+	else
+	{
+		while(s!= NULL)
+		{
+			s = s->next;
+			counter++;
+		}
+		if(pos>1 && pos<=counter)
+		{
+			s = head;
+			for(i=1; i<pos; i++)
+			{
+				ptr = s;
+				s = s->next;
+			}
+			ptr->next = s->next;
+		}
+		else
+		{
+			cout << "Memory out of range" << endl;
+			return;
+		}
+		free(s);
+		cout << "Element deleted" << endl;
+	}
+}
