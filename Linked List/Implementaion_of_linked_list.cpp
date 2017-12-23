@@ -236,3 +236,30 @@ void LinkedList::insert_pos()
 		cout<<"Positon out of range"<<endl;
 	}
 }
+
+void LinkedList::sort()
+{
+	Node *ptr, *s;
+	int value;
+
+	if(head == NULL)
+	{
+		cout << "List is empty" << endl
+		return;
+	}
+
+	ptr = head;
+	while(ptr != NULL)
+	{
+		for(s=ptr->next; s!=NULL; s=s->next)
+		{
+			if(ptr->data > s->data)
+			{
+				value = ptr->data;
+				ptr->data = s->data;
+				s->data = value;
+			}
+		}
+		ptr = ptr->next;
+	}
+}
