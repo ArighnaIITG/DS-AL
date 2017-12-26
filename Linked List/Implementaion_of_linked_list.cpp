@@ -1,4 +1,4 @@
-/* This program will implement the various operations possible in a linked list,
+/*Implement the various operations possible in a linked list,
    like inserting a node at various positions, or deleting a node, or reversing 
    the linked list, etc
 */
@@ -18,7 +18,7 @@ struct Node
 
 struct Node *head;       // Head Node of the Linked List
 
-class LinkedList()
+class LinkedList
 {
 	public :
 		Node* create_Node(int value);       // Creating a node with a given value
@@ -134,7 +134,7 @@ main()
 
 Node* LinkedList::create_Node(int value)
 {
-	Node *temp, *s;
+	Node *s;
 	Node *temp = new Node;
 	if(temp == NULL)
 		cout << "Memory not allocated" << endl;
@@ -149,7 +149,7 @@ Node* LinkedList::create_Node(int value)
 void LinkedList::insert_begin()
 {
 	int value;
-	cout << "Enter the value to be inserted : " << endl
+	cout << "Enter the value to be inserted : " << endl;
 	cin >> value;
 
 	Node *temp, *p;
@@ -165,13 +165,13 @@ void LinkedList::insert_begin()
 		head = temp;
 		head->next = p;
 	}
-	cout << "Element inserted at beginning" < endl;
+	cout << "Element inserted at beginning" << endl;
 }
 
-void LinkedList::insert_end()
+void LinkedList::insert_last()
 {
 	int value;
-	cout << "Enter the value to be inserted : " << endl
+	cout << "Enter the value to be inserted : " << endl;
 	cin >> value;
 
 	Node *temp, *s;
@@ -183,14 +183,14 @@ void LinkedList::insert_end()
 
 	temp->next = NULL;
 	s->next = temp;
-	cout << "Element inserted at end" << endl
+	cout << "Element inserted at end" << endl;
 }
 
 void LinkedList::insert_pos()
 {
 	int value;
 	int pos, counter=0;
-	cout << "Enter the value to be inserted : " << endl
+	cout << "Enter the value to be inserted : " << endl;
 	cin >> value;
 
 	Node *temp, *s, *ptr;
@@ -225,7 +225,7 @@ void LinkedList::insert_pos()
 		for(i=1; i<pos; i++)
 		{
 			ptr = s;
-			s = s->next
+			s = s->next;
 		}
 		ptr->next = temp;
 		temp->next = s;
@@ -244,7 +244,7 @@ void LinkedList::sort()
 
 	if(head == NULL)
 	{
-		cout << "List is empty" << endl
+		cout << "List is empty" << endl;
 		return;
 	}
 
@@ -345,7 +345,7 @@ void LinkedList::update()
 		}
 		s->data = value;
 	}
-	cout << "Element updated." << endl
+	cout << "Element updated." << endl;
 }
 
 void LinkedList::search()
@@ -386,7 +386,7 @@ void LinkedList::reverse()
 	Node *ptr1, *ptr2, *ptr3;
 	if(head == NULL)
 	{
-		cout << "List is empty." << endl
+		cout << "List is empty." << endl;
 		return;
 	}
 	if(head->next == NULL)
@@ -416,7 +416,7 @@ void LinkedList::display()
 	Node *temp;
 	if(head == NULL)
 	{
-		cout << "List is empty." << endl
+		cout << "List is empty." << endl;
 		return;
 	}
 
