@@ -16,4 +16,15 @@ using namespace std;
 
 #define MAX 1000
 
- 
+class Stack
+{
+	int top;    // Stack pointer
+	Stack()     // Constructor
+	{
+		top = -1;     // The stack pointer is at first initialized to the bottom of the stack.
+	}
+	bool push(int x);
+	int pop();
+	bool isEmpty();
+};
+
