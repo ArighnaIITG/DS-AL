@@ -21,6 +21,30 @@ class Stack_LL()
 {
 	public :
 		StackNode* new_Node(int data);
-		int isEmpty(StackNode **head);
-		
+		int isEmpty(StackNode *head);
+		void push(StackNode **head, int data);
+		int pop(StackNode **head);
+		int peek(StackNode **head);
+};
+
+StackNode* Stack_LL::new_Node(int data)
+{
+	StackNode *new_node = new StackNode;
+	new_node->data = data;
+	new_node->next = NULL;
+	return new_node;
 }
+
+int Stack_LL::isEmpty(StackNode *head)
+{
+	return !head;
+}
+
+void Stack_LL::push(StackNode **head, int data)
+{
+	StackNode *new_node = new_Node(data);
+	new_node->next = *head;
+	*head = new_node;
+	cout << data << " is pushed to the stack." << endl 
+}
+
