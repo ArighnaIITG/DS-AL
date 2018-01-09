@@ -25,10 +25,10 @@ void showStack(stack <int> q)
 	stack <int> g = q;
 	while(!g.empty())
 	{
-		cout << '\t' << g.top()
-		g.pop()
+		cout << ' ' << g.top();
+		g.pop();
 	}
-	cout << '\n'
+	cout << '\n';
 }
 
 int main ()
