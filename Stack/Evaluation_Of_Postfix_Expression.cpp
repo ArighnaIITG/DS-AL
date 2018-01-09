@@ -22,5 +22,13 @@ using namespace std;
 
 class Postfix
 {
+	public :
+		int evaluatePostfix(string s);
+};
+
+int Postfix::evaluatePostfix(string s)
+{
+	stack <char> st;
+	int l = s.length();
 	
 }
