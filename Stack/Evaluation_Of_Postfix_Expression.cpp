@@ -30,5 +30,27 @@ int Postfix::evaluatePostfix(string s)
 {
 	stack <char> st;
 	int l = s.length();
-	
+
+	for(int i=0; i<l; i++)
+	{
+		if(isDigit(s[i]))
+		{
+			s.push(s[i]);
+		}
+
+		else
+		{
+			int val1 = st.pop();
+			int val2 = st.pop();
+			switch(s[i])
+			{
+				case '+' : st.push(val1 + val2);  break;
+				case '-' : st.push(val1 - val2);  break;
+				case '*' : st.push(val1 * val2);  break;
+				case '/' : st.push(val1 / val2);  break;
+				case '^' : st.push(val1 ^ val2);  break;
+				default : cout << "Wrong choice entered..!" << endl;
+			}
+		}
+	}
 }
