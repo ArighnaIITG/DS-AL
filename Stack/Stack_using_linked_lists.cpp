@@ -53,7 +53,7 @@ int Stack_LL::pop(StackNode** head)
 {
 	if (isEmpty(*head))
 	{
-		return INT_MIN;
+		return INT_MIN;          // This is basically an underflow condition.
 	}
 	StackNode *temp = *head;
 	*head = (*head)->next;
