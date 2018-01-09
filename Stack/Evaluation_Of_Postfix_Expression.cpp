@@ -78,7 +78,9 @@ int Postfix::evaluatePostfix(string s)
 int main()
 {
 	Postfix p;
-	string str = "231+*9-";
+	string str ;
+	cout << "Enter the postfix expression : ";
+	cin >> str;
 	cout << "Value of the postfix expression is " << p.evaluatePostfix(str) << "." << endl;
 	return 0;
 }
