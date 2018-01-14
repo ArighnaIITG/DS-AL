@@ -10,4 +10,19 @@ Running Time of an algorithm depends uopn :
 	4. Input to the computer
 
 When we talk about time complexity, we take into account only the last option.
+We are interested in calculating the rate of growth of time taken by an algorithm with respect to the input.
 
+We first define a model machine acc. to our choice. Suppose the model machine takes 1 unit of time for basic mathematical operations, and 1 unit of time for assignment and return.
+
+Let's take examples :
+
+    1. Sum of two numbers :
+
+       Pseudocode : Sum(a, b)
+    			    { return a+b }
+
+    	Here addition takes 1 unit of time and return also. Therefore, total = 2 units of time.
+    	So, the rate will be same.
+    	Therefore, it's a "constant function."
+
+    2. 
