@@ -56,3 +56,9 @@ Asymptotic Notations :
                  See the general rules of calcualting time complexity in this video :
                  "https://www.youtube.com/watch?v=PFd5s0bHgAQ".
 
+       Some general rules are :
+
+       1. Big-Oh Notation ignores constants.
+       2. Certain terms dominate others :
+
+       Eg.  O(1) < O(logn) < O(n) < O(nlogn) < O(n**2) < O(2**n) < O(n!)
