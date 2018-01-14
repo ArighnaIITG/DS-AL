@@ -3,4 +3,7 @@ Asymptotic Notations :
      1. Big-Oh Notation - Gives the rate of growth of running time of an algorithm with respect to 
                           the input given.
 
-                 FORMAL DEFINITION : 
+                 FORMAL DEFINITION : Let there be some non-negative function g(n).
+
+                                     So, ""O(g(n)) = Set of all functions f(n) such that g(n) <= c*f(n)
+                                         for all n>=n0, where c & n0 are constants."" 
