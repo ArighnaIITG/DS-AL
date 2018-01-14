@@ -1,3 +1,6 @@
 Asymptotic Notations :
 
+     1. Big-Oh Notation - Gives the rate of growth of running time of an algorithm with respect to 
+                          the input given.
 
+                 FORMAL DEFINITION : 
