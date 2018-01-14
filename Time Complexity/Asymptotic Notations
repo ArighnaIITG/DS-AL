@@ -1,7 +1,7 @@
 Asymptotic Notations :
 
      1. Big-Oh Notation - Gives the rate of growth of running time of an algorithm with respect to 
-                          the input given.
+                          the input given. Gives the worst-case running time, the upper bound.
 
                  FORMAL DEFINITION : Let there be some non-negative function g(n).
 
@@ -14,6 +14,7 @@ Asymptotic Notations :
 
                  		So, if c=8, then f(n) <= 8*n**2 for all n >= 1.
                  		So, f(n) has O(n**2) notation.
+
 
       2. Omega Notation : Gives the lower bound of rate of growth of running time of an algorithm with
       					  respect to the input given.
@@ -30,4 +31,18 @@ Asymptotic Notations :
                  		So, if c=5, then 5*g(n) <= f(n) for all n >= 0.
                  		So, f(n) has omega(n**2) notation.
 
-      3. 
+
+      3. Theta Notation : Gives the tight bound of rate of growth of running time of an algorithm with
+      					  respect to the input given.
+
+      			 FORMAL DEFINITION : Let there be some non-negative function g(n).
+
+                                     So, ""theta(g(n)) = Set of all functions f(n) such that c1*g(n) <= f(n) <= c2*g(n)
+                                         for all n>=n0, where c1, c2 & n0 are constants."" 
+
+                 One example :
+                 				f(n) = 5*n**2 + 2*n + 1
+                 				g(n) = n**2
+
+                 		So, if c=5, then 5*g(n) <= f(n) <= 8*g(n) for all n >= 0.
+                 		So, f(n) has theta(n**2) notation.
