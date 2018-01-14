@@ -53,4 +53,6 @@ Asymptotic Notations :
                  1. For very large input sizes
                  2. Worst - case scenario
 
-                 
+                 See the general rules of calcualting time complexity in this video :
+                 "https://www.youtube.com/watch?v=PFd5s0bHgAQ".
+
