@@ -35,3 +35,12 @@ Let's take examples :
     				 	return total                                      c4            1
     				 }
 
+        So, total time: c1 + c2*(n+1) + c3*n + c4
+        So, rate of growth is "linear" w.r.t to the input.
+
+    3. Similarly, Sum of elements in a 2-dimensional matrix will be of the form 
+       T(n) = an**2 + bn*2 + c.
+
+    This can be replaced by Big-Oh notation , where quadratic notation can be represented by O(n**2)
+    and linear can be represented by O(n). These are called as asymptotic bounds, or notations.
+    More details in next slide.
