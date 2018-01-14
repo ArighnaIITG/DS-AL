@@ -25,4 +25,13 @@ Let's take examples :
     	So, the rate will be same.
     	Therefore, it's a "constant function."
 
-    2. 
+    2. Sum of all elements in a list :
+
+    	Pseudocode : Sum(A, n)                                           COST      NO. OF TIMES
+    				 {
+    				 	total = 0                                         c1            1
+    				 	for(int i=0; i<=n-1; i++)                         c2           n + 1
+    				 			total += A[n]                             c3            n
+    				 	return total                                      c4            1
+    				 }
+
