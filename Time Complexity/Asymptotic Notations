@@ -5,5 +5,15 @@ Asymptotic Notations :
 
                  FORMAL DEFINITION : Let there be some non-negative function g(n).
 
-                                     So, ""O(g(n)) = Set of all functions f(n) such that g(n) <= c*f(n)
+                                     So, ""O(g(n)) = Set of all functions f(n) such that f(n) <= c*g(n)
                                          for all n>=n0, where c & n0 are constants."" 
+
+                 One example :
+                 				f(n) = 5*n**2 + 2*n + 1
+                 				g(n) = n**2
+
+                 		So, if c=8, then f(n) <= 8*n**2 for all n >= 1.
+                 		So, f(n) has O(n**2) notation.
+
+      2. Omega Notation :
+      
