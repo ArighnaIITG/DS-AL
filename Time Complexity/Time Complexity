@@ -1,3 +1,13 @@
 Time Complexity of a program is the time taken for a program to run, given the input size keeps on increasing.
 
 You can understand the need for time complexity analysis of a program by seeing the first video of TIME COMPLEXITY on "https://youtube.com/mycodeschool"
+
+Running Time of an algorithm depends uopn :
+
+	1. Single or multi-processor
+	2. 32-bit or 64-bit processor
+	3. Read/Write speed to memory
+	4. Input to the computer
+
+When we talk about time complexity, we take into account only the last option.
+
