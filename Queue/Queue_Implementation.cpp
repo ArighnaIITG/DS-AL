@@ -45,6 +45,24 @@ class QueueImp
 Queue* QueueImp::createQueue(unsigned capacity)
 {
 	Queue *queue = new Queue;
-	queue->front = queue->size =0;
+	queue->capacity = capacity;
+	queue->front = queue->size = 0;
+	queue->rear = capacity -1;
+	queue->array = new int;
+	return queue;
+}
+
+int isFull(Queue* queue)
+{
+	return (queue->size == queue->capacity);
+}
+
+int isEmpty(Queue* queue)
+{
+	return (queue->size == 0);
+}
+
+void enqueue(Queue* queue, int item)
+{
 	
 }
