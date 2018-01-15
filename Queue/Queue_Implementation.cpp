@@ -52,17 +52,17 @@ Queue* QueueImp::createQueue(unsigned capacity)
 	return queue;
 }
 
-int isFull(Queue* queue)
+int QueueImp::isFull(Queue* queue)
 {
 	return (queue->size == queue->capacity);
 }
 
-int isEmpty(Queue* queue)
+int QueueImp::isEmpty(Queue* queue)
 {
 	return (queue->size == 0);
 }
 
-void enqueue(Queue* queue, int item)
+void QueueImp::enqueue(Queue* queue, int item)
 {
-	
+
 }
