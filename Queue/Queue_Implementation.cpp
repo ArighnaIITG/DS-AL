@@ -100,3 +100,20 @@ int QueueImp::rear(Queue* queue)
 	return queue->array[queue->rear];
 }
 
+int main()
+{
+	QueueImp q;
+    Queue* queue = q.createQueue(1000);
+ 
+    q.enqueue(queue, 10);
+    q.enqueue(queue, 20);
+    q.enqueue(queue, 30);
+    q.enqueue(queue, 40);
+ 
+    cout << q.dequeue(queue) << " dequeued from queue." << endl;
+ 
+    cout << "Front item is " << q.front(queue) << "." << endl;
+    cout << "Rear item is " << q.rear(queue) << "." << endl;
+ 
+    return 0;
+}
