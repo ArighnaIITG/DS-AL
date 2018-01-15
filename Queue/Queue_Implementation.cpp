@@ -64,5 +64,11 @@ int QueueImp::isEmpty(Queue* queue)
 
 void QueueImp::enqueue(Queue* queue, int item)
 {
+	if isFull(queue)
+		return;
 
+	queue->rear = ((queue->rear + 1) % queue->capacity);
+	queue->array[queue->rear] = item;
+	queue->size += 1;
+	cout << item << " has been enqueued to the queue." << endl;
 }
