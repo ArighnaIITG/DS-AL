@@ -18,6 +18,7 @@
 #include <iostream>
 #include <cstdio>
 #include <cstdlib>
+#include <climits>
 
 using namespace std;
 
@@ -64,7 +65,7 @@ int QueueImp::isEmpty(Queue* queue)
 
 void QueueImp::enqueue(Queue* queue, int item)
 {
-	if isFull(queue)
+	if (isFull(queue))
 		return;
 
 	queue->rear = ((queue->rear + 1) % queue->capacity);
@@ -75,9 +76,10 @@ void QueueImp::enqueue(Queue* queue, int item)
 
 int QueueImp::dequeue(Queue* queue)
 {
-	if isEmpty(queue)
-		return;
+	if (isEmpty(queue))
+		return INT_MIN;
 
+	int item;
 	item = queue->array[queue->front];
 	queue->front = ((queue->front + 1) % queue->capacity);
 	queue->size -= 1;
@@ -86,16 +88,16 @@ int QueueImp::dequeue(Queue* queue)
 
 int QueueImp::front(Queue* queue)
 {
-	if isEmpty(queue)
-		return;
+	if (isEmpty(queue))
+		return INT_MIN;
 
 	return queue->array[queue->front];
 }
 
 int QueueImp::rear(Queue* queue)
 {
-	if isEmpty(queue)
-		return;
+	if (isEmpty(queue))
+		return INT_MIN;
 
 	return queue->array[queue->rear];
 }
