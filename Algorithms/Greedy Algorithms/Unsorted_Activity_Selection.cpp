@@ -21,5 +21,10 @@ class ActivitySelection
 {
 	public :
 		bool compareActivity(Activity a1, Activity a2);
-		void 
+		void printActivity(Activity arr[], int n);
+};
+
+bool ActivitySelection::compareActivity(Activity a1, Activity a2)
+{
+	return (a1.finish < a2.finish);
 }
