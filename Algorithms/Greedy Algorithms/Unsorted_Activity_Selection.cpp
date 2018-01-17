@@ -35,5 +35,19 @@ void ActivitySelection::printActivity(Activity arr90, int n)
 	sort(arr, arr+n, compareActivity);
 
 	int i, j;
-	
+	cout << "Following activities are selected : " << endl;
+
+	// The first activity always gets selected.
+	i = 0;
+	cout << "(" << arr[i].start << ", " << arr[i].finish << "), ";
+
+	for(j=1; j<n; j++)
+	{
+		//Same logic as previos function
+		if(arr[j].start >= arr[i].finish)
+		{
+			cout << "(" << arr[j].start << ", " << arr[j].finish << "), ";
+			i = j;
+		}
+	}
 }
