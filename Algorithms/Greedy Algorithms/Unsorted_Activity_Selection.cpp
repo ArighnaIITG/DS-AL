@@ -51,3 +51,15 @@ void ActivitySelection::printActivity(Activity arr90, int n)
 		}
 	}
 }
+
+// Driver program
+int main()
+{
+	ActivitySelection act;
+    Activity arr[] = {{5, 9}, {1, 2}, {3, 4}, {0, 6},
+                                       {5, 7}, {8, 9}};
+    int n = sizeof(arr)/sizeof(arr[0]);
+
+    act.printActivity(arr, n);
+    return 0;
+}
