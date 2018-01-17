@@ -29,7 +29,7 @@ bool ActivitySelection::compareActivity(Activity a1, Activity a2)
 	return (a1.finish < a2.finish);
 }
 
-void ActivitySelection::printActivity(Activity arr90, int n)
+void ActivitySelection::printActivity(Activity arr[], int n)
 {
 	//Sort tasks according to the increasing finish time.
 	sort(arr, arr+n, compareActivity);
