@@ -50,5 +50,14 @@ void printEgyptianFraction(int nr, int dr)
 	int n = 1 + (dr/nr);
 	cout << "1/" << n << " + ";
 	printEgyptianFraction(n*nr - dr, dr*n);
-	return;
+}
+
+int main()
+{
+    int nr = 6, dr = 14;
+    cout << "Egyptian Fraction Representation of "
+         << nr << "/" << dr << " is - " << endl;
+
+    printEgyptian(nr, dr);
+    return 0;
 }
