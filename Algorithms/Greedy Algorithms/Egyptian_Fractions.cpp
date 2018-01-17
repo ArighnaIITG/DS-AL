@@ -16,3 +16,31 @@
 
 */
 
+#include <iostream>
+#include <cstdio>
+#include <bits/stdc++.h>
+
+using namespace std;
+
+void printEgyptianFraction(int nr, int dr)
+{
+	if(dr == 0 || nr == 0)
+		return;
+
+	if((dr % nr) == 0)
+	{
+		cout << "1/" << dr/nr;
+		return;
+	}
+
+	if((nr % dr) == 0)
+	{
+		cout << nr/dr;
+		return;
+	}
+
+	if((nr > dr))
+	{
+		
+	}
+}
