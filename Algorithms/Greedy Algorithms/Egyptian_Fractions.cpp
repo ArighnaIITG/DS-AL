@@ -58,6 +58,6 @@ int main()
     cout << "Egyptian Fraction Representation of "
          << nr << "/" << dr << " is - " << endl;
 
-    printEgyptian(nr, dr);
+    printEgyptianFraction(nr, dr);
     return 0;
 }
