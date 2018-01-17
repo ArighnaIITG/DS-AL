@@ -41,6 +41,14 @@ void printEgyptianFraction(int nr, int dr)
 
 	if((nr > dr))
 	{
-		
+		cout << nr/dr << ", ";
+		printEgyptianFraction((nr % dr), dr);
+		return;
 	}
+
+	// If it has reached till here, it means that dr > nr is True, and that dr % nr != 0.
+	int n = 1 + (dr/nr);
+	cout << "1/" << n << " + ";
+	printEgyptianFraction(n*nr - dr, dr*n);
+	return;
 }
