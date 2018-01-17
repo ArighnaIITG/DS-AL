@@ -14,7 +14,7 @@
 	finish[] ]
 
 	Example 2 : Consider the following 6 activities 
-	sorted by by finish time.
+	sorted by finish time.
      	start[]  =  {1, 3, 0, 5, 8, 5};
      	finish[] =  {2, 4, 6, 7, 9, 9};
 	A person can perform at most four activities. The 
@@ -34,5 +34,23 @@ using namespace std;
 
 void print_activity(int s[], int f[], int n)
 {
-	
+	int i, j;
+	cout << "Following activities are selected : " << endl;
+
+	// The first activity corresponding to the finish time array is always selected. 
+	i = 0;
+	cout << i << " ";
+
+	for(j = 0; j<n; j++)
+	{
+		// If this activity has start time greater than or
+      	// equal to the finish time of previously selected
+      	// activity, then select it
+
+      	if (s[j] >= f[i])
+      	{
+      		cout << j << " ";
+      		i = j;
+      	}
+	}
 }
