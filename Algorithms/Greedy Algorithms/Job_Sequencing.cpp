@@ -54,7 +54,7 @@ bool compareJobs(Job a, Job b)
 	return (a.profit > b.profit);     // We have to sort jobs in descending order.
 }
 
-void printJobSequence(int arr[], int n)
+void printJobSequence(Job arr[], int n)
 {
 	//Sort jobs according to the descending order of profit.
 	sort(arr, arr+n, compareJobs);
