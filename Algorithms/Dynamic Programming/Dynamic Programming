@@ -1,2 +1,30 @@
 Dynamic Programming :
 
+Dynamic Programming is an algorithmic paradigm that solves a complex problem by dividing it into
+smaller subproblems, and stores the results of subproblems to avoid computing the same results again.
+
+There are two main properties of Dynamic Programming :
+	
+	1. Overlapping Subproblems
+	2. Optimal Substructure
+
+  
+   Overlapping Subproblems  
+   =========== ===========
+
+   Like Divide and Conquer, Dynamic Programming combines solutions to sub-problems. Dynamic Programming is mainly used when solutions of same subproblems are needed again and again. In dynamic programming, computed solutions to subproblems are stored in a table so that these don’t have to recomputed. So Dynamic Programming is not useful when there are no common (overlapping) subproblems because there is no point storing the solutions if they are not needed again.
+
+    If we take example of using recursive program for Fibonacci Numbers, there are many subproblems which are solved again and again.
+
+    Here are following two different ways to store the values so that these values can be reused:
+
+		a) Memoization (Top Down)
+		b) Tabulation (Bottom Up)
+
+		They will be explained using programs in further files.
+
+
+    Optimal Substructure
+    ======= ============
+
+    
