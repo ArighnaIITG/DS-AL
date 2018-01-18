@@ -45,5 +45,9 @@ int fib(int n)
 
 int main()
 {
-	
+	int n = 40;
+  	initialize();
+
+  	cout << "Fibonacci number is " << fib(n) << endl;
+  	return 0;
 }
