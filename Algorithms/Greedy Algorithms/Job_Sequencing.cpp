@@ -56,5 +56,41 @@ bool compareJobs(Job a, Job b)
 
 void printJobSequence(int arr[], int n)
 {
+	//Sort jobs according to the descending order of profit.
+	sort(arr, arr+n, compareJobs);
+
+	int result[n];    // Result sequence
+	bool slot[n];     // Queries about whether slots are free or not
+
+	// Initializing all slots to false now.
+	for(int i=0; i<n; i++)
+		slot[i] = false;
+
+	// Iterating through all the given jobs
+	for(int i=0; i<n; i++)
+	{
+		// Important - "We are starting from the last possible slot."
+		for(int j = min(n, arr[i].dead) -1; j>=0; j--)
+		{
+			// Find free slots
+			if(slot[j] == false)
+			{
+				result[j] = i;   // Add this job to the result sequence
+				slot[j] = true;  // Make this slot occupied.
+				break;
+			}
+		}
+	}
+
+	// Print the result sequence
+	for(int i=0; i<n; i++)
+	{
+		if(slot[i] == true)
+			cout << arr[result[i]].id << " - ";
+	}
+}
+
+int main()
+{
 	
 }
