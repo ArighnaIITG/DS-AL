@@ -31,11 +31,30 @@
           		without missing the deadline, add current job to the result.
           		Else ignore the current job.
 
+    Input to this program will be an array of structures.
+
 */
 
 #include <iostream>
 #include <bits/stdc++.h>
 #include <cstdlib>
+#include <algorithm>
 
 using namespace std;
 
+struct Job
+{
+	char id;
+	int dead;
+	int profit;
+};
+
+bool compareJobs(Job a, Job b)
+{
+	return (a.profit > b.profit);     // We have to sort jobs in descending order.
+}
+
+void printJobSequence(int arr[], int n)
+{
+	
+}
