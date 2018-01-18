@@ -16,11 +16,12 @@
 
 #include <iostream>
 #include <cstdio>
+#include <cstdlib>
 #include <bits/stdc++.h>
 
 using namespace std;
-define NIL -1;
-define MAX 100;
+#define NIL -1
+#define MAX 100
 
 int lookup[MAX];
 
