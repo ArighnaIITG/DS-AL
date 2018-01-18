@@ -92,5 +92,11 @@ void printJobSequence(int arr[], int n)
 
 int main()
 {
-	
+	Job arr[] = { {'a', 2, 100}, {'b', 1, 19}, {'c', 2, 27},
+                   {'d', 1, 25}, {'e', 3, 15}};
+    int n = sizeof(arr)/sizeof(arr[0]);
+
+    cout << "Following is maximum profit sequence of jobs -- " << endl;
+    printJobSequence(arr, n);
+    return 0;
 }
