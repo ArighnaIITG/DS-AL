@@ -14,4 +14,23 @@
 
 */
 
+#include <iostream>
+#include <cstdio>
+#include <bits/stdc++.h>
 
+using namespace std;
+define NIL -1;
+define MAX 100;
+
+int lookup[MAX];
+
+void initialize()
+{
+	for(int i=0; i<MAX; i++)
+		lookup[i] = NIL;
+}
+
+int fib(int n)
+{
+	
+}
