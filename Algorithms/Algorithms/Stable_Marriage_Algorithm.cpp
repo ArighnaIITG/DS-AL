@@ -55,3 +55,31 @@
 
 */
 
+#include <iostream>
+#include <cstdio>
+#include <cstdlib>
+#include <string.h>
+
+using namespace std;
+
+//No. of men or women
+
+#define N 4
+
+// Returns true if woman 'w' prefers a man 'm1' over another man 'm'.
+bool man_preference(int prefer[2*N][N], int w, int m1, int m)
+{
+	for(int i=0; i<N; i++)
+	{
+		// If m1 comes before m in list of w, then w prefers her
+        // current engagement, don't do anything.
+		if(prefer[w][i] == m1)
+			return true;
+
+		// If m comes before m1 in w's list, then free her current
+        // engagement and engage her with m.
+		if(prefer[w][i] == m)
+			return false;
+	}
+}
+
