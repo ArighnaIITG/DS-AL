@@ -21,5 +21,22 @@
 	there are no two people of opposite sex that would prefer each other over their 
 	assigned partners.
 
+	We have the Gale-Shapley Algorithm dedicated towards solving this problem :
+
+	Algorithm :
+	=========
 	
+	Initialize all men and women to free
+	while there exist a free man m who still has a woman w to propose to 
+	{
+    	w = m's highest ranked such woman to whom he has not yet proposed
+	    if w is free
+	       (m, w) become engaged
+	    else some pair (m', w) already exists
+	       if w prefers m to m'
+	          (m, w) become engaged
+	           m' becomes free
+	       else
+	          (m', w) remain engaged    
+	}
 
