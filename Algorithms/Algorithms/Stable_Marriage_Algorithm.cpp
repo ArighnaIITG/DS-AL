@@ -25,7 +25,7 @@
 
 	Algorithm :
 	=========
-	
+
 	Initialize all men and women to free
 	while there exist a free man m who still has a woman w to propose to 
 	{
@@ -39,4 +39,19 @@
 	       else
 	          (m', w) remain engaged    
 	}
+
+	Input :
+	=====
+
+	Input is a 2D matrix of size (2*N)*N where N is number of women or men. Rows from 
+	0 to N-1 represent preference lists of men and rows from N to 2*N – 1 represent 
+	preference lists of women. So men are numbered from 0 to N-1 and women are numbered 
+	from N to 2*N – 1. The output is list of married pairs.
+
+	Output :
+	======
+
+	The list of matching pairs.
+
+*/
 
