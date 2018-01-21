@@ -114,10 +114,15 @@ void stable_marriage_problem(int prefer[2*N][N])
     			break;
     	}
 
+    	// One by one go to all women according to m's preferences.
+        // Here m is the picked free man.
     	for(int i=0; i<N && mFree[m] == false; i++)
     	{
     		int w = prefer[m][i];
 
+    		// The woman of preference is free, w and m become
+            // partners (Note that the partnership maybe changed
+            // later). So we can say they are engaged not married.
     		if(wPartner[w-N] == -1)
     		{
     			wPartner[w-N] = m;
@@ -125,12 +130,15 @@ void stable_marriage_problem(int prefer[2*N][N])
     			freeCount--;
     		}
 
-    		else
+    		else  // If w is not free.
     		{
-    			int m1 = wPartner[w-N];
+    			int m1 = wPartner[w-N]; // Find current engagement of w.
 
-    			if(man_preference(prefer, w, m, m1) == false)
+    			if(man_preference(prefer, w, m, m1) == false)   // If m1 has less preference than m
     			{
+    				// If w prefers m over her current engagement m1,
+                	// then break the engagement between w and m1 and
+                	// engage m with w.
     				wPartner[w-N] = m;
     				mFree[m] = true;
     				mFree[m1] = false;
