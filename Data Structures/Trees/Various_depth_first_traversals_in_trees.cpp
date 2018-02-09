@@ -16,17 +16,21 @@
 using namespace std;
 
 // Represents a tree node
-struct Node
+struct TreeNode
 {
 	int data;
-	struct Node* left;
-	struct Node* right;	
+	struct TreeNode* left;
+	struct TreeNode* right;	
 };
 
 class TreeTraversal
 {
 	public:
-		
+		TreeNode* newTreeNode(int data);
+		void printInorder(TreeNode* node);
+		void printPostorder(TreeNode* node);
+		void printPreorder(TreeNode* node);
+};
 
-}
+
 
