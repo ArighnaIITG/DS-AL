@@ -14,6 +14,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <iostream>
 
 using namespace std;
 
@@ -78,20 +79,21 @@ void TreeTraversal::printPreorder(TreeNode* node)
 
 int main()
 {
-	TreeNode *root = newTreeNode(1);
-	root->left = newTreeNode(2);
-	root->right = newTreeNode(3);
-	root->left->left = newTreeNode(4);
-	root->left->right = newTreeNode(5);
+	TreeTraversal tree;
+	TreeNode *root = tree.newTreeNode(1);
+	root->left = tree.newTreeNode(2);
+	root->right = tree.newTreeNode(3);
+	root->left->left = tree.newTreeNode(4);
+	root->left->right = tree.newTreeNode(5);
 
 	cout << "\nPreorder traversal of binary tree is \n" << endl;
-    printPreorder(root);
+    tree.printPreorder(root);
  
     cout << "\nInorder traversal of binary tree is \n" << endl;
-    printInorder(root);  
+    tree.printInorder(root);  
  
     cout << "\nPostorder traversal of binary tree is \n" << endl;
-    printPostorder(root);
+    tree.printPostorder(root);
 
     return 0;
 }
