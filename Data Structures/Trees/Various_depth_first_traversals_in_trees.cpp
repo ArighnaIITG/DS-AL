@@ -43,7 +43,7 @@ TreeNode* TreeTraversal::newTreeNode(int data)
 	return newnode;
 }
 
-void printInorder(TreeNode* node)
+void TreeTraversal::printInorder(TreeNode* node)
 {
 	if(node == NULL)
 		return;
@@ -54,7 +54,7 @@ void printInorder(TreeNode* node)
 	printInorder(node->right);
 }
 
-void printPostorder(TreeNode* node)
+void TreeTraversal::printPostorder(TreeNode* node)
 {
 	if(node == NULL)
 		return;
@@ -65,7 +65,7 @@ void printPostorder(TreeNode* node)
 	cout << node->data << " - " ;
 }
 
-void printPreorder(TreeNode* node)
+void TreeTraversal::printPreorder(TreeNode* node)
 {
 	if(node == NULL)
 		return;
@@ -76,3 +76,22 @@ void printPreorder(TreeNode* node)
 	printInorder(node->right);
 }
 
+int main()
+{
+	TreeNode *root = newTreeNode(1);
+	root->left = newTreeNode(2);
+	root->right = newTreeNode(3);
+	root->left->left = newTreeNode(4);
+	root->left->right = newTreeNode(5);
+
+	cout << "\nPreorder traversal of binary tree is \n" << endl;
+    printPreorder(root);
+ 
+    cout << "\nInorder traversal of binary tree is \n" << endl;
+    printInorder(root);  
+ 
+    cout << "\nPostorder traversal of binary tree is \n" << endl;
+    printPostorder(root);
+
+    return 0;
+}
