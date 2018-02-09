@@ -37,3 +37,22 @@ class BinarySearchTree
 		TreeNode* searchBSTNode(TreeNode* node, int key);
 }
 
+TreeNode* BinarySearchTree::newBSTNode(int data)
+{
+	TreeNode *newnode = new TreeNode;
+	newnode->data = data;
+	newnode->left = NULL;
+	newnode->right = NULL;
+	return newnode;
+}
+
+void BinarySearchTree::inorder(TreeNode* root)
+{
+	if (root == NULL)
+		return;
+
+	inorder(root->left);
+	cout << root->data << " ";
+	inorder(root->right);
+}
+
