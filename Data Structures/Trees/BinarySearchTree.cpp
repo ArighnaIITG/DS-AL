@@ -84,3 +84,22 @@ TreeNode* BinarySearchTree::searchBSTNode(TreeNode* root, int key)
 		searchBSTNode(root->right, key);
 }
 
+int main()
+{
+	BinarySearchTree bst;
+	TreeNode *root = NULL;
+	bst.insertBSTNode(root, 10);
+	bst.insertBSTNode(root, 30);
+    bst.insertBSTNode(root, 20);
+    bst.insertBSTNode(root, 40);
+    bst.insertBSTNode(root, 70);
+    bst.insertBSTNode(root, 60);
+    bst.insertBSTNode(root, 80);
+
+    TreeNode *node = NULL;
+    node = bst.searchBSTNode(root, 40);
+    if (node == NULL)
+    	cout << "Element not in Binary Search Tree.";
+    else
+    	cout << "Element is there !!";
+}
