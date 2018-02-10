@@ -11,7 +11,7 @@
     	4. There must be no duplicate nodes.
 	
 	This program will implement how to search a given key and also insert a given node in a BST.
-	Done by the recuresive strategy.
+	Done by the recursive strategy.
 
 */
 
@@ -32,9 +32,9 @@ class BinarySearchTree
 {
 	public:
 		TreeNode* newBSTNode(int data);
-		void inorder(TreeNode* node);
-		TreeNode* insertBSTNode(TreeNode* node, int key);
-		TreeNode* searchBSTNode(TreeNode* node, int key);
+		void inorder(TreeNode* root);
+		TreeNode* insertBSTNode(TreeNode* root, int key);
+		TreeNode* searchBSTNode(TreeNode* root, int key);
 }
 
 TreeNode* BinarySearchTree::newBSTNode(int data)
@@ -54,5 +54,33 @@ void BinarySearchTree::inorder(TreeNode* root)
 	inorder(root->left);
 	cout << root->data << " ";
 	inorder(root->right);
+}
+
+TreeNode* BinarySearchTree::insertBSTNode(TreeNode* root, int key)
+{
+	// If the tree is empty, then return a new node.
+	if (root == NULL)
+		return newBSTNode(key);
+
+	// Now, recurring down the tree
+	if (key < root->key)
+		root->left = insertBSTNode(root->left, key);
+	if (key > root->key)
+		root-> right  insertBSTNode(root->right, key);
+
+	// Return the unchanged root pointer
+	return root;
+}
+
+TreeNode* BinarySearchTree::searchBSTNode(TreeNode* root, int key)
+{
+	if ((root == NULL) || (root->key == key))
+		return root;
+
+	// Else recur down the tree.
+	if (key < root->key)
+		searchBSTNode(root->left, key);
+	if (key > root->key)
+		searchBSTNode(root->right, key);
 }
 
