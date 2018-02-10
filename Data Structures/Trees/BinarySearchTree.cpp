@@ -23,7 +23,7 @@ using namespace std;
 
 struct TreeNode
 {
-	int data;
+	int key;
 	struct TreeNode* left;
 	struct TreeNode* right;
 };
@@ -31,16 +31,16 @@ struct TreeNode
 class BinarySearchTree
 {
 	public:
-		TreeNode* newBSTNode(int data);
+		TreeNode* newBSTNode(int key);
 		void inorder(TreeNode* root);
 		TreeNode* insertBSTNode(TreeNode* root, int key);
 		TreeNode* searchBSTNode(TreeNode* root, int key);
-}
+};
 
-TreeNode* BinarySearchTree::newBSTNode(int data)
+TreeNode* BinarySearchTree::newBSTNode(int key)
 {
 	TreeNode *newnode = new TreeNode;
-	newnode->data = data;
+	newnode->key = key;
 	newnode->left = NULL;
 	newnode->right = NULL;
 	return newnode;
@@ -52,7 +52,7 @@ void BinarySearchTree::inorder(TreeNode* root)
 		return;
 
 	inorder(root->left);
-	cout << root->data << " ";
+	cout << root->key << " ";
 	inorder(root->right);
 }
 
@@ -66,7 +66,7 @@ TreeNode* BinarySearchTree::insertBSTNode(TreeNode* root, int key)
 	if (key < root->key)
 		root->left = insertBSTNode(root->left, key);
 	if (key > root->key)
-		root-> right  insertBSTNode(root->right, key);
+		root-> right = insertBSTNode(root->right, key);
 
 	// Return the unchanged root pointer
 	return root;
@@ -88,7 +88,7 @@ int main()
 {
 	BinarySearchTree bst;
 	TreeNode *root = NULL;
-	bst.insertBSTNode(root, 10);
+	root = bst.insertBSTNode(root, 50);
 	bst.insertBSTNode(root, 30);
     bst.insertBSTNode(root, 20);
     bst.insertBSTNode(root, 40);
@@ -96,10 +96,13 @@ int main()
     bst.insertBSTNode(root, 60);
     bst.insertBSTNode(root, 80);
 
+    bst.inorder(root);
+    cout << endl;
+
     TreeNode *node = NULL;
     node = bst.searchBSTNode(root, 40);
     if (node == NULL)
-    	cout << "Element not in Binary Search Tree.";
+    	cout << "Element not in Binary Search Tree." << endl;
     else
-    	cout << "Element is there !!";
+    	cout << "Element is there !!" << endl;
 }
