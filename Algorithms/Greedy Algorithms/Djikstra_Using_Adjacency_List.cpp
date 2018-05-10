@@ -83,3 +83,50 @@ struct MinHeapNode* newMinHeapNode(int v, int dist)
 	return newNode;
 }
 
+struct MinHeap* createMinHeap(int capacity)
+{
+	struct MinHeap* minheap = (struct MinHeap*) malloc(sizeof(struct MinHeap));
+	minheap->size = 0;
+	minheap->capacity = capacity;
+	minheap->pos = (int*) malloc(capacity * sizeof(int));
+	minheap->array = (struct MinHeapNode**) malloc(sizeof(struct MinHeapNode));
+	return minheap;
+}
+
+void swapMinHeapNode(struct MinHeapNode** a, struct MinHeapNode** b)
+{
+	struct MinHeapNode* t = *a;
+	*a = *b;
+	*b = t;
+}
+
+// A standard function to heapify at given idx.
+// This function also updates position of nodes when they are swapped.
+// Position is needed for decreaseKey()
+
+void minHeapify(struct MinHeap* minheap, int idx)
+{
+	int smallest, left, right;
+	smallest = idx;
+	left = 2*idx + 1;
+	right = 2*idx + 2;
+
+	if(left < minheap->size && minheap->array[left]->dist < minheap->array[smallest]->dist)
+		smallest = left;
+
+	if(right < minheap->size && minheap->array[right]->dist < minheap->array[smallest]->dist)
+		smallest = right;
+
+	if(smallest != idx)
+	{
+		MinHeapNode *smallestNode = minheap->array[smallest];
+		MinHeapNode *idxNode = minheap->array[idx];
+
+		minheap->pos[smallest->v] = idx;
+		minheap->pos[idx->v] = smallest;
+
+		swapMinHeapNode(&minheap->array[smallest], &minheap->array[idx]);
+		minHeapify(minheap, smallest);
+	}
+}
+
