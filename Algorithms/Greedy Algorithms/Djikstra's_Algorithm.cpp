@@ -56,7 +56,27 @@ void djikstra(int graph[V][V], int src)
 		// Iterate through adjacent vertices to update the distance values.
 		for(int v=0; v<V; v++)
 		{
-			if()
+			if(!sptSet[v] && graph[u][v] && dist[u]!= INT_MAX && (dist[u] + graph[u][v] < dist[v]))
+				dist[v] = dist[u] + graph[u][v];
 		}
 	}
+	printSolution(dist, V);
+}
+
+int main()
+{
+	int graph[V][V] = {{0, 4, 0, 0, 0, 0, 0, 8, 0},
+                      {4, 0, 8, 0, 0, 0, 0, 11, 0},
+                      {0, 8, 0, 7, 0, 4, 0, 0, 2},
+                      {0, 0, 7, 0, 9, 14, 0, 0, 0},
+                      {0, 0, 0, 9, 0, 10, 0, 0, 0},
+                      {0, 0, 4, 14, 10, 0, 2, 0, 0},
+                      {0, 0, 0, 0, 0, 2, 0, 1, 6},
+                      {8, 11, 0, 0, 0, 0, 1, 0, 7},
+                      {0, 0, 2, 0, 0, 0, 6, 7, 0}
+                      };
+  
+    dijkstra(graph, 0);
+  
+    return 0;
 }
