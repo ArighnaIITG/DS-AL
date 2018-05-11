@@ -66,8 +66,6 @@ int main()
 
 	bool result = ps.hasPathSum(treenode, sum);
 
-	cout << result << endl;
-
 	if (result == 1)
 		cout << "The path sum is valid." << endl;
 	else
