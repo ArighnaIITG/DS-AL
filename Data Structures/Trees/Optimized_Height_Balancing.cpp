@@ -39,7 +39,7 @@ bool isBalanced(TreeNode* node, int* height)
 	l = isBalanced(node->left, &lh);
 	r = isBalanced(node->right, &rh);
 
-	*height = ((lh > rh)? lh: rh) + 1;
+	*height = ((lh > rh)? lh: rh) + 1; // Get the height of the current node.
 
 	if(abs(lh - rh) >= 2)
 		return 0;
@@ -61,9 +61,9 @@ int main()
 	root->left->left->left = newNode(7);
 	 
 	if(isBalanced(root, &height))
-	    printf("Tree is balanced");
+	    printf("Tree is balanced.");
 	else
-	    printf("Tree is not balanced");    
+	    printf("Tree is not balanced.");    
 	 
 	return 0;
 }
