@@ -57,5 +57,19 @@ int main()
     }
     cout << endl;
 
+    // For upper and lower bound, check the definitions carefully.
+
+    //lower bound and upper bound for set s
+    cout << "s.lower_bound(40) : "
+         << *s.lower_bound(40) << endl;
+    cout << "s.upper_bound(40) : "
+         << *s.upper_bound(40) << endl;
+ 
+    //lower bound and upper bound for set s2
+    cout << "s2.lower_bound(40) : "
+         << *s2.lower_bound(40) << endl;
+    cout << "s2.upper_bound(40) : "
+         << *s2.upper_bound(40) << endl;
+
 	return 0;
 }
