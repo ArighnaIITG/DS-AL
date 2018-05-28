@@ -84,7 +84,7 @@ TreeNode* constructTreeFromUtil(int pre[], int* preindex, int key, int min, int 
 TreeNode* constructTree(int pre[], int size)
 {
 	int *preindex = 0;
-	return constructTreeFromUtil(pre, *preindex, pre[0], INT_MIN, INT_MAX, size);
+	return constructTreeFromUtil(pre, &preindex, pre[0], INT_MIN, INT_MAX, size);
 }
 
 */
